@@ -1,8 +1,15 @@
-## 1.makeCacheMatrix: This function creates a special "matrix" object that can cache its inverse.
-## 2.cacheSolve: This function computes the inverse of the special "matrix" returned by makeCacheMatrix above. 
+#Matrix inversion is usually a costly computation and there may be some benefit to caching the inverse of a matrix rather
+#than computing it repeatedly. The following pair of functions cache the inverse of a matrix.
 
-
-## 1. The makeCacheMatrix function creates a special matrix object that can cache its inverse
+## makeCacheMatrix: A function to add the above mentioned feature to matrix.
+## inputs
+##    x: a square invertible matrix
+## return: a list containing functions to
+##              1. set the matrix
+##              2. get the matrix
+##              3. set the inverse
+##              4. get the inverse
+##         this list is used as the input to cacheSolve()
 
 makeCacheMatrix <- function(x = matrix()) {
         m <- NULL
